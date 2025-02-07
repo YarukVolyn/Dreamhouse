@@ -1,0 +1,22 @@
+name: dreamhouse
+recipe: symfony
+config:
+  webroot: public
+  php: '8.3'
+  via: nginx
+  database: mysql
+  cache: redis
+  xdebug: true
+  drush: true
+services:
+  appserver:
+    overrides:
+      environment:
+        XDEBUG_SESSION_START: LANDO
+        PHP_IDE_CONFIG: "serverName=localhost"
+  phpmyadmin:
+    type: phpmyadmin
+    hosts: [ ]
+  redis:
+    type: redis
+    portforward: true

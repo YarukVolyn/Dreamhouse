@@ -1,0 +1,22 @@
+{# templates/content/olx_test/index.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block page_content %}
+
+    <main class="main-content col" id="content" role="main">
+        <section class="section">
+            <h1>{{ page_title }}</h1>
+            <div class="content-top">
+                <div class="example-wrapper">
+                    <h1>Hello {{ controller_name }}! ✅</h1>
+
+                    This friendly message is coming from:
+                    <ul>
+                        <li>Your controller at <code><a href="{{ '/app/src/Controller/OlxTestController.php'|file_link(0) }}">src/Controller/OlxTestController.php</a></code></li>
+                        <li>Your template at <code><a href="{{ '/app/templates/olx_test/index.html.twig'|file_link(0) }}">templates/olx_test/index.html.twig</a></code></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

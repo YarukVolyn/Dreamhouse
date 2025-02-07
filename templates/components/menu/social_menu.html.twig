@@ -1,0 +1,18 @@
+{# templates/components/menu/social_menu.html.twig #}
+
+{% import _self as menus %}
+
+{{ menus.menu_links(items, attributes) }}
+
+{% macro menu_links(items, attributes) %}
+  {% import _self as menus %}
+  {% if items %}
+    <ul {% for attr, value in attributes %}{{ attr }}="{{ value|e('html_attr') }}" {% endfor %}>
+      {% for item in items %}
+        <li class="nav-item ms-3">
+          <a href="{{ item.url }}" class="text-muted">{{ item.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

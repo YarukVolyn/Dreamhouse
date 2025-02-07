@@ -1,0 +1,38 @@
+{# templates/content/contact_us/index.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block page_content %}
+    <main class="main-content col" id="content" role="main">
+        <section class="section">
+            {% for flash_success in app.flashes('contact_u_success') %}
+                <div class="w-100 alert alert-success rounded mb-3" role="alert">
+                    <i class="fas fa-times-circle mr-1"></i>
+                    {{ flash_success|trans }}
+                </div>
+            {% endfor %}
+            {% for flash_error in app.flashes('contact_us_error') %}
+                <div class="w-100 alert alert-danger rounded mb-3" role="alert">
+                    <i class="fas fa-times-circle mr-1"></i>
+                    {{ flash_error|trans }}
+                </div>
+            {% endfor %}
+
+            <form class="w-50 m-auto" action="{{ path('app_contact_us') }}" method="post">
+                {% if csrf_token_intention|default(false) %}
+                    {{ form_row(form._token) }}
+                {% endif %}
+
+                <input type="hidden" name="{{ target_path_parameter|default('_target_path') }}" value="{{ target_path ? path('app_contact_us') ? '/' }}" />
+
+                <h1 class="h3 mb-3 fw-normal text-center">{{ page_title }}</h1>
+                <p>{{ help_text }}</p>
+                {{ form_row(form.name) }}
+                {{ form_row(form.email) }}
+                {{ form_row(form.phone) }}
+                {{ form_row(form.message) }}
+
+                <button class="mb-2 mt-4 w-100 btn btn-lg btn-primary" type="submit">{{ button_label }}</button>
+            </form>
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="uk" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="rSWmi1r" resname="label.form.empty_value">
+        <source>label.form.empty_value</source>
+        <target>__label.form.empty_value</target>
+      </trans-unit>
+      <trans-unit id="vMRdZZB" resname="label.nullable_field">
+        <source>label.nullable_field</source>
+        <target>__label.nullable_field</target>
+      </trans-unit>
+      <trans-unit id="flAoA9y" resname="autocomplete.no-results-found">
+        <source>autocomplete.no-results-found</source>
+        <target>No results found</target>
+      </trans-unit>
+      <trans-unit id="MLS2ZRD" resname="autocomplete.no-more-results">
+        <source>autocomplete.no-more-results</source>
+        <target>No more results</target>
+      </trans-unit>
+      <trans-unit id="hCDMpjH" resname="autocomplete.loading-more-results">
+        <source>autocomplete.loading-more-results</source>
+        <target>Loading more results</target>
+      </trans-unit>
+      <trans-unit id="dhADgSE" resname="action.add_new_item">
+        <source>action.add_new_item</source>
+        <target>Add new item</target>
+      </trans-unit>
+      <trans-unit id="47Pt8HL" resname="action.remove_item">
+        <source>action.remove_item</source>
+        <target>Remove item</target>
+      </trans-unit>
+      <trans-unit id="cKnorcr" resname="action.choose_file">
+        <source>action.choose_file</source>
+        <target>Сhoose file</target>
+      </trans-unit>
+      <trans-unit id="5nxOeVi" resname="form.tab.error_badge_title">
+        <source>form.tab.error_badge_title</source>
+        <target>__form.tab.error_badge_title</target>
+      </trans-unit>
+      <trans-unit id="PX2zfQj" resname="files">
+        <source>files</source>
+        <target>Files</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

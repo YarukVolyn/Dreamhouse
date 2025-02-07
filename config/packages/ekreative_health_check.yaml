@@ -1,0 +1,5 @@
+ekreative_health_check:
+    doctrine:
+        - 'default'
+    redis:
+        - 'redis'

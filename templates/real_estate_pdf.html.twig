@@ -1,0 +1,67 @@
+{# templates/real_estate_pdf.html.twig #}
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <h4>{{ 'Title'|trans }}: {{ title }}</h4>
+        <div class="">
+            <p>{{ 'Date'|trans }}: {{ date }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Real estate operation'|trans }}: {{ real_estate_operation }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Real estate type'|trans }}: {{ real_estate_type }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Details'|trans }}: {{ details }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Contact'|trans }}: {{ contact }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Contact type'|trans }}: {{ contact_type }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Price'|trans }}: {{ price }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Price type'|trans }}: {{ price_type }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Number of rooms'|trans }}: {{ rooms }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Area'|trans }}: {{ area }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Floor / Storey'|trans }}: {{ floor }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Object type'|trans }}: {{ object_type }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'House type'|trans }}: {{ house_type }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Bathroom'|trans }}: {{ bathroom }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Heating'|trans }}: {{ heating }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Location'|trans }}: {{ location }}</p>
+        </div>
+        <div class="">
+            <p>{{ 'Images'|trans }}:
+            {% for image in images %}
+                <p>{{ image.name }}</p>
+                <img class="m-2 img-fluid img-thumbnail" src="{{ absolute_url(asset('/files/image/'~image.image)) }}" alt=""/>
+            {% endfor %}
+            </p>
+        </div>
+    </body>
+</html>

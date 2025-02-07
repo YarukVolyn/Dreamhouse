@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block page_content %}
+    <main class="form-check-email w-100 m-auto" id="form-check-email" role="main">
+        <section class="section">
+            {% for flash_error in app.flashes('reset_password_error') %}
+                <div class="w-100 alert alert-danger rounded mb-3" role="alert">
+                    <i class="fas fa-times-circle mr-1"></i>
+                    {{ flash_error|trans }}
+                </div>
+            {% endfor %}
+
+            <h1>{{ page_title }}</h1>
+            <p>
+                {{ 'If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password.'|trans }}
+                {{ 'This link will expire in'|trans }} {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+            </p>
+            <p>{{ 'If you don`t receive an email please check your spam folder or'|trans }} <a href="{{ path('app_forgot_password_request') }}">{{ 'try again'|trans }}</a>.</p>
+        </section>
+    </main>
+{% endblock %}

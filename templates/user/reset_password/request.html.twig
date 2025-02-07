@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block page_content %}
+    <main class="form-reset-pass w-100 m-auto" id="form-reset-pass" role="main">
+        <section class="section">
+            {% for flash_error in app.flashes('reset_password_error') %}
+                <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+            {% endfor %}
+
+            {{ form_start(requestForm) }}
+            {{ form_row(requestForm.email) }}
+            <div class="help-text mb-3">
+                <div class="form-text">
+                    {{ help_text }}
+                </div>
+            </div>
+            <button class="mb-2 w-100 btn btn-lg btn-primary" type="submit">{{ _button_label }}</button>
+            {{ form_end(requestForm) }}
+        </section>
+    </main>
+{% endblock %}

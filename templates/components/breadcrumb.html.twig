@@ -1,0 +1,12 @@
+{# templates/components/breadcrumb.html.twig #}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        {% for breadcrumb_item in breadcrumbs %}
+            {% if not breadcrumb_item.active %}
+                <li class="breadcrumb-item"><a href="{{ breadcrumb_item.href }}">{{ breadcrumb_item.title }}</a></li>
+            {% else %}
+                <li class="breadcrumb-item active" aria-current="page">{{ breadcrumb_item.title }}</li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+</nav>

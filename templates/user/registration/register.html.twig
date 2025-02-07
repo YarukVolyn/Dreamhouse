@@ -1,0 +1,31 @@
+{# templates/registration/register.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block page_content %}
+    <main class="form-register w-100 m-auto" id="form-register" role="main">
+        <section class="section">
+            {% for flash_error in app.flashes('verify_email_error') %}
+                <div class="w-100 alert alert-danger rounded mb-3" role="alert">
+                    <i class="fas fa-times-circle mr-1"></i>
+                    {{ flash_error|trans }}
+                </div>
+            {% endfor %}
+
+            <form action="{{ path('app_register') }}" method="post">
+                {% if csrf_token_intention|default(false) %}
+                    {{ form_row(registrationForm._token) }}
+                {% endif %}
+
+                <input type="hidden" name="{{ target_path_parameter|default('_target_path') }}" value="{{ target_path ? path('app_login') ? '/' }}" />
+
+                <h1 class="h3 mb-3 fw-normal text-center">{{ page_title }}</h1>
+
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword) }}
+                {{ form_row(registrationForm.agreeTerms) }}
+
+                <button class="mb-2 w-100 btn btn-lg btn-primary" type="submit">{{ _sign_in_label }}</button>
+            </form>
+        </section>
+    </main>
+{% endblock %}

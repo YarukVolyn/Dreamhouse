@@ -1,0 +1,19 @@
+{# templates/content/homepage/index.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block page_content %}
+    <main class="main-content col" id="content" role="main">
+        <section class="section">
+            {% for flash_success in app.flashes('success') %}
+                <div class="w-100 alert alert-success rounded mb-3" role="alert">
+                    <i class="fas fa-times-circle mr-1"></i>
+                    {{ flash_success|trans }}
+                </div>
+            {% endfor %}
+            <h1>{{ page.content.title }}</h1>
+            <div class="content-top">
+                <p>{{ page.content.text }}</p>
+            </div>
+        </section>
+    </main>
+{% endblock %}

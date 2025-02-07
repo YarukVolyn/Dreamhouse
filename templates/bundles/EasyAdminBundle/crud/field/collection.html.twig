@@ -1,0 +1,18 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{# @var field \EasyCorp\Bundle\EasyAdminBundle\Dto\FieldDto #}
+{# @var entity \EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto #}
+{# this is a bit ugly, but Twig doesn't have a 'is numeric' test #}
+{% if field.formattedValue matches '/^\\d+$/' %}
+    <span class="badge badge-secondary">{{ field.formattedValue }}</span>
+{% elseif 'image' == field.customOptions.get('type') %}
+    <div class="d-flex flex-row">
+
+        {% for image in field.value.owner.images %}
+            <div class="w-25 m-2">
+                <img class="img-fluid" src="{{ asset('/files/image/'~image.image) }}" alt="">
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    {{ field.formattedValue }}
+{% endif %}

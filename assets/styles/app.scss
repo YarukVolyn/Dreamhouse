@@ -1,0 +1,53 @@
+$primary: #334255 !default;
+
+@import "~bootstrap/scss/bootstrap";
+
+:root {
+  --body-max-width: calc(100vw - 230px);
+}
+
+header {
+  ul.nav {
+    margin-right: auto;
+  }
+}
+.form-check-email {
+  max-width: 100%;
+}
+
+.form-reset-pass {
+  input[type="password"] {
+    margin-bottom: -1px !important;
+  }
+
+  input[id="change_password_form_plainPassword_second"] {
+    margin-bottom:  1rem !important;
+  }
+}
+
+.form-signin,
+.form-register,
+.form-reset-pass {
+  max-width: 330px;
+  padding: 15px;
+
+  .form-floating:focus-within {
+    z-index: 2;
+  }
+
+  input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+textarea.form-control {
+  height: auto !important;
+}

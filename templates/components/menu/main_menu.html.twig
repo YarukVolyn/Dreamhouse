@@ -1,0 +1,25 @@
+{# templates/components/menu/menu.html.twig #}
+
+{% import _self as menus %}
+
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul {% for attr, value in attributes %}{{ attr }}="{{ value|e('html_attr') }}" {% endfor %}>
+    {% else %}
+      <ul class="menu">
+    {% endif %}
+    {% for item in items %}
+      <li class="nav-item {{ item.is_expanded ? 'menu-item--expanded' }} {{ item.is_collapsed ? 'menu-item--collapsed' }} {{ item.in_active_trail ? 'menu-item--active-trail' }}">
+        <a href="{{ item.url }}" class="nav-link px-2 {{ 'nav-link-' ~ item.url }} {{ not item.in_active_trail ? 'link-dark' }} {{ item.in_active_trail ? 'active link-secondary' }}">{{ item.title }}</a>
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
