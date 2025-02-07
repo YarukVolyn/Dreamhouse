@@ -102,6 +102,6 @@ class UserCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInPlural($this->translator->trans('Users'))
             ->setEntityLabelInSingular($this->translator->trans('User'))
-            ;
+        ;
     }
 }

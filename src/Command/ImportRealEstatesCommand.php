@@ -6,7 +6,6 @@ namespace App\Command;
 
 use App\Entity\RealEstate;
 use App\Repository\RealEstatesRepository;
-use DateTime;
 use League\Csv\Exception;
 use League\Csv\Reader;
 use Symfony\Component\Console\Command\Command;
@@ -147,7 +146,7 @@ class ImportRealEstatesCommand extends Command
                 // Changes with date.
                 $converted_date = strtotime(str_replace(array_keys($this->months), array_values($this->months), strtolower($row['date'])));
                 if ($converted_date) {
-                    $date = new DateTime(date('Y-m-d', $converted_date));
+                    $date = new \DateTime(date('Y-m-d', $converted_date));
                 } else {
                     $date = null;
                 }

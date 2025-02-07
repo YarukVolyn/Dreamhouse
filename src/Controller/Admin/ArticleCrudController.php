@@ -48,7 +48,7 @@ class ArticleCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInPlural($this->translator->trans('Articles'))
             ->setEntityLabelInSingular($this->translator->trans('Article'))
-            ;
+        ;
     }
 
     public function configureActions(Actions $actions): Actions
@@ -79,7 +79,7 @@ class ArticleCrudController extends AbstractCrudController
             ->add(Crud::PAGE_DETAIL, $publishArticle)
             ->add(Crud::PAGE_DETAIL, $rejectArticle)
             ->add(Crud::PAGE_DETAIL, $toDraftArticle)
-            ;
+        ;
     }
 
     public function configureFields(string $pageName): iterable
@@ -167,7 +167,6 @@ class ArticleCrudController extends AbstractCrudController
             ?? $this->container->get(AdminUrlGenerator::class)->setAction(Action::INDEX)->generateUrl();
 
         return $this->redirect($url);
-
     }
 
     /**
@@ -183,6 +182,5 @@ class ArticleCrudController extends AbstractCrudController
             ?? $this->container->get(AdminUrlGenerator::class)->setAction(Action::INDEX)->generateUrl();
 
         return $this->redirect($url);
-
     }
 }

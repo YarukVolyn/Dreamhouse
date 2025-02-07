@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller\Admin;
 
 use App\Entity\Client;
@@ -7,7 +9,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
@@ -36,7 +37,7 @@ class ClientCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInPlural($this->translator->trans('Clients'))
             ->setEntityLabelInSingular($this->translator->trans('Client'))
-            ;
+        ;
     }
 
     public function configureActions(Actions $actions): Actions

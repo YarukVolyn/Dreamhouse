@@ -52,7 +52,7 @@ class RealEstateCrudController extends AbstractCrudController
         return $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->add(Crud::PAGE_DETAIL, $generatePdf)
-            ;
+        ;
     }
 
     public function configureFields(string $pageName): iterable
@@ -223,7 +223,7 @@ class RealEstateCrudController extends AbstractCrudController
                     ])
                     ->setLabel($this->translator->trans('Location')),
             )
-            ;
+        ;
     }
 
     public function generatePdf(AdminContext $context): BinaryFileResponse

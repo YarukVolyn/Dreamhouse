@@ -6,7 +6,6 @@ namespace App\Command;
 
 use App\Entity\Client;
 use App\Repository\ClientRepository;
-use DateTime;
 use League\Csv\Exception;
 use League\Csv\Reader;
 use Symfony\Component\Console\Command\Command;
@@ -85,7 +84,7 @@ class ImportClientsCommand extends Command
             // Changes with date.
             $converted_date = strtotime(str_replace(array_keys($this->months), array_values($this->months), strtolower($row['date'])));
             if ($converted_date) {
-                $date = new DateTime(date('Y-m-d', $converted_date));
+                $date = new \DateTime(date('Y-m-d', $converted_date));
             } else {
                 $date = null;
             }

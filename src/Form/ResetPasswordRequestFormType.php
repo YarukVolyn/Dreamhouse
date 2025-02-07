@@ -32,12 +32,11 @@ class ResetPasswordRequestFormType extends AbstractType
                     'placeholder' => $this->translator->trans('Email'),
                     'autocomplete' => 'email',
                 ],
-
-                //                'constraints' => [
-                //                    new NotBlank([
-                //                        'message' => 'Please enter your email',
-                //                    ]),
-                //                ],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Please enter your email',
+                    ]),
+                ],
             ])
         ;
     }

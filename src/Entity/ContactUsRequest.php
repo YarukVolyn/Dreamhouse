@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use App\Repository\ContactUsRequestRepository;
@@ -12,7 +14,9 @@ class ContactUsRequest
 {
     /**
      * @ORM\Id
+     *
      * @ORM\GeneratedValue
+     *
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -39,7 +43,7 @@ class ContactUsRequest
 
     public function __toString()
     {
-        return (string)$this->id;
+        return (string) $this->id;
     }
 
     public function getId(): ?int

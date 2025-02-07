@@ -9,12 +9,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
@@ -41,7 +38,7 @@ class ContactUsRequestCrudController extends AbstractCrudController
             ->remove(Crud::PAGE_INDEX, Action::NEW)
             ->remove(Crud::PAGE_INDEX, Action::EDIT)
             ->remove(Crud::PAGE_DETAIL, Action::EDIT)
-            ;
+        ;
     }
 
     public function configureFields(string $pageName): iterable
@@ -61,7 +58,6 @@ class ContactUsRequestCrudController extends AbstractCrudController
             ->setEntityLabelInPlural($this->translator->trans('Contact us requests'))
             ->setEntityLabelInSingular($this->translator->trans('Contact us request'))
             ->setPageTitle(Crud::PAGE_DETAIL, $this->translator->trans('Contact us request # %entity_as_string%'))
-
-            ;
+        ;
     }
 }

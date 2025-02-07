@@ -39,7 +39,7 @@ class ImageCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInPlural($this->translator->trans('Images'))
             ->setEntityLabelInSingular($this->translator->trans('Image'))
-            ;
+        ;
     }
 
     public function configureActions(Actions $actions): Actions
@@ -60,6 +60,6 @@ class ImageCrudController extends AbstractCrudController
     {
         return $filters
             ->add(EntityFilter::new('realEstate')->setLabel($this->translator->trans('Image')))
-            ;
+        ;
     }
 }
